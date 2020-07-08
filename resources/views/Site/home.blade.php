@@ -1,5 +1,5 @@
-<h1>HOME</h1>
-<h1>HOME</h1>
-<h1>HOME</h1>
+@extends('Template.layout')
 
-<a href="{{route('logout')}}">Logout</a>
+@section('content')
+  
+@endsection
