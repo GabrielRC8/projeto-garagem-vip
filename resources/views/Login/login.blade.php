@@ -26,6 +26,7 @@
 <meta name="theme-color" content="#563d7c">
 
 
+<<<<<<< HEAD
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -47,6 +48,9 @@
     background-color: black !important;
 }
     </style>
+=======
+    
+>>>>>>> develop
     <!-- Custom styles for this template -->
     <link href={{url(mix('Login/css/signin.css'))}} rel="stylesheet">
   </head>

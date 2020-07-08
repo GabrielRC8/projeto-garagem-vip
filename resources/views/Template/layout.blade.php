@@ -40,6 +40,11 @@
           font-size: 3.5rem;
         }
       }
+<<<<<<< HEAD
+=======
+
+ 
+>>>>>>> develop
     </style>
     <!-- Custom styles for this template -->
     <link href="navbar-top.css" rel="stylesheet">
@@ -52,6 +57,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
+<<<<<<< HEAD
       <li class="nav-item active">
         <a class="nav-link" href="">Clientes</a>
       </li>
@@ -60,6 +66,17 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="" tabindex="-1" aria-disabled="true">Ordens</a>
+=======
+      <li class="nav-item {{route::current()->getName() === 'customers' ? 'active' : '' }}"><a class="nav-link" href="{{route('customers')}}">Clientes</a></li>
+      
+
+      <li class="nav-item {{route::current()->getName() === 'register' ? 'active' : '' }}"><a class="nav-link" href="{{route('register')}}">Cadastro</a></li>
+      
+      <li class="nav-item {{route::current()->getName() === 'orders' ? 'active' : '' }}"><a class="nav-link" href="{{route('orders')}}">Ordens</a></li>
+      
+      <li class="nav-item {{route::current()->getName() === 'products' ? 'active' : '' }}"><a class="nav-link" href="{{route('products')}}">Produtos</a></li>
+
+>>>>>>> develop
       </li>
     </ul>
 <form class="form-inline mt-2 mt-md-0" action="{{route('logout')}}">
@@ -71,6 +88,24 @@
 @yield('content')
 
 
+<<<<<<< HEAD
+=======
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> develop
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
