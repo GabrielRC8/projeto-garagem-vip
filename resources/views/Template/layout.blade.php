@@ -7,13 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Garagem Vip System</title>
+    <title>Garagem Vip</title>
 
-    
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-static/">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -26,40 +25,69 @@
 <meta name="theme-color" content="#563d7c">
 
 
-    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+ 
+    </style>
     <!-- Custom styles for this template -->
-    <link href={{url(mix('Login/css/signin.css'))}} rel="stylesheet">
+    <link href="navbar-top.css" rel="stylesheet">
   </head>
-  <body class="text-center">
-    
-  <form class="form-signin" method="post" action="{{route('login.do')}}">
-      @csrf
-  <img class="mb-4" src="{{asset('Login/storage/garagemvip.jpeg')}}" alt="" width="200" height="200">
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <span class="navbar-brand" href="#">Garagem Vip</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item {{route::current()->getName() === 'customers' ? 'active' : '' }}"><a class="nav-link" href="{{route('customers')}}">Clientes</a></li>
+      
 
-    @if ($errors->all())
-        @foreach ($errors->all() as $error)
-          <div class="alert alert-danger" role="alert">
-            {{$error}}
-          </div>
-    
-        @endforeach      
-    @endif
+      <li class="nav-item {{route::current()->getName() === 'register' ? 'active' : '' }}"><a class="nav-link" href="{{route('register')}}">Cadastro</a></li>
+      
+      <li class="nav-item {{route::current()->getName() === 'orders' ? 'active' : '' }}"><a class="nav-link" href="{{route('orders')}}">Ordens</a></li>
+      
+      <li class="nav-item {{route::current()->getName() === 'products' ? 'active' : '' }}"><a class="nav-link" href="{{route('products')}}">Produtos</a></li>
 
-  <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-  <label for="email" class="sr-only">Email </label>
-  <!--email validado no controller  -->
-  <input type="text" id="email" name="email" class="form-control" value="{{old('email')}}" placeholder="Email " required autofocus>
-  <label for="password" class="sr-only">Senha</label>
-  <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
+      </li>
+    </ul>
+<form class="form-inline mt-2 mt-md-0" action="{{route('logout')}}">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+    </form>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+</nav>
 
-  <p class="mt-5 mb-3 text-muted">&copy; {{date('Y')}}</p>
-</form>
+@yield('content')
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

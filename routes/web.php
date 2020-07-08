@@ -16,10 +16,14 @@ return view('Login.login');
 })->name('login');*/
 
 Route::get('/', 'Login\\AuthController@dashboard')->name('login');
-Route::post('/auth', 'Login\\AuthController@login')->name('login.do'); 
+Route::post('/Auth', 'Login\\AuthController@login')->name('login.do'); 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/logout', 'Login\\AuthController@logout')->name('logout'); 
+    Route::get('/Logout', 'Login\\AuthController@logout')->name('logout'); 
+    Route::get('/Clientes', 'Customers\\CustomersController@index')->name('customers'); 
+    Route::get('/Ordens', 'Orders\\OrdersController@index')->name('orders');
+    Route::get('/Produtos', 'Product\\ProductController@index')->name('products');
+    Route::get('/Cadastro', 'Register\\RegisterController@index')->name('register');  
 
 
 });
