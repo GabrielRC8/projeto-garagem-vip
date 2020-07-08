@@ -46,19 +46,33 @@
     <link href={{url(mix('Login/css/signin.css'))}} rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin">
+    
+  <form class="form-signin" method="post" action="{{route('login.do')}}">
+      @csrf
   <img class="mb-4" src="{{asset('Login/storage/garagemvip.jpeg')}}" alt="" width="200" height="200">
+
+    @if ($errors->all())
+        @foreach ($errors->all() as $error)
+          <div class="alert alert-danger" role="alert">
+            {{$error}}
+          </div>
+    
+        @endforeach      
+    @endif
+
   <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-  <label for="inputEmail" class="sr-only">Email </label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email " required autofocus>
-  <label for="inputPassword" class="sr-only">Senha</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+  <label for="email" class="sr-only">Email </label>
+  <!--email validado no controller  -->
+  <input type="text" id="email" name="email" class="form-control" value="{{old('email')}}" placeholder="Email " required autofocus>
+  <label for="password" class="sr-only">Senha</label>
+  <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required>
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
     </label>
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
   <p class="mt-5 mb-3 text-muted">&copy; {{date('Y')}}</p>
 </form>
 

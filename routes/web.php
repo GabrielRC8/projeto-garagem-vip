@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('Login.login');
+/*Route::get('/', function () {
+return view('Login.login');
+})->name('login');*/
+
+Route::get('/', 'Login\\AuthController@dashboard')->name('login');
+Route::post('/auth', 'Login\\AuthController@login')->name('login.do'); 
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout', 'Login\\AuthController@logout')->name('logout'); 
+
+
 });
+
+
